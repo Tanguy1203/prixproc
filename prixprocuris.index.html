@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Tarif Procuris</title>
+    <link rel="stylesheet" href="prixprocuris.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de Tarif Procuris</h1>
+        <form id="calculateur">
+            <label for="nombre_emplacements">Nombre d'emplacements :</label>
+            <input type="number" id="nombre_emplacements" name="nombre_emplacements" required>
+            
+            <label for="nombre_etoiles">Nombre d'étoiles :</label>
+            <select id="nombre_etoiles" name="nombre_etoiles">
+                <option value="1">1 étoile</option>
+                <option value="2">2 étoiles</option>
+                <option value="3">3 étoiles</option>
+                <option value="4">4 étoiles</option>
+                <option value="5">5 étoiles</option>
+            </select>
+            
+            <label for="type_abonnement">Type d'abonnement :</label>
+            <select id="type_abonnement" name="type_abonnement">
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+            </select>
+            
+            <label for="remise">Remise en % :</label>
+            <input type="number" id="remise" name="remise" min="0" max="100" value="0">
+            
+            <button type="button" onclick="calculerTarif()">Calculer le Tarif</button>
+        </form>
+        <div id="resultat">
+            <p>Tarif Mensuel : <span id="tarif_mensuel"></span> €</p>
+            <p>Tarif Annuel (Paiement Mensuel) : <span id="tarif_annuel_mensuel"></span> €</p>
+            <p>Tarif Annuel (Paiement Annuel) : <span id="tarif_annuel_annuel"></span> €</p>
+        </div>
+    </div>
+    <script src="prixprocuris.js"></script>
+</body>
+</html>
